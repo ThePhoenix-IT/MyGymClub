@@ -25,4 +25,8 @@
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="sign_in">Sign in</string>
     <string name="password">Password</string>
+    <string name="workouts">Workouts</string>
+    <string name="assign_workouts">Assign Workouts</string>
+    <string name="class_schedule">Class Schedule</string>
+    <string name="class_list">Class List</string>
 </resources>

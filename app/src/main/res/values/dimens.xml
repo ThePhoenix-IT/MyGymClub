@@ -29,13 +29,13 @@
     <dimen name="notification_main_column_padding_top">10.0dip</dimen>
     <item type="dimen" name="notification_media_narrow_margin">@dimen/notification_content_margin_start</item>
     <dimen name="activity_horizontal_margin">16.0dip</dimen>
-    <item type="dimen" name="TextLarge">17sdp</item>
-    <item type="dimen" name="TextMedium">14sdp</item>
-    <item type="dimen" name="TextSmall">12sdp</item>
-    <item type="dimen" name="TextXLarge">20sdp</item>
-    <item type="dimen" name="TextXMedium">15sdp</item>
-    <item type="dimen" name="TextXSmall">8sdp</item>
-    <item type="dimen" name="TextXXSmall">10sdp</item>
+    <item type="dimen" name="TextLarge">17sp</item>
+    <item type="dimen" name="TextMedium">14sp</item>
+    <item type="dimen" name="TextSmall">12sp</item>
+    <item type="dimen" name="TextXLarge">20sp</item>
+    <item type="dimen" name="TextXMedium">15sp</item>
+    <item type="dimen" name="TextXSmall">8sp</item>
+    <item type="dimen" name="TextXXSmall">10sp</item>
     <dimen name="abc_action_bar_elevation_material">4.0dip</dimen>
     <dimen name="abc_action_bar_icon_vertical_padding_material">16.0dip</dimen>
     <dimen name="abc_action_bar_overflow_padding_end_material">10.0dip</dimen>
@@ -134,15 +134,15 @@
     <item type="dimen" name="hint_alpha_material_light">0.38</item>
     <item type="dimen" name="hint_pressed_alpha_material_dark">0.7</item>
     <item type="dimen" name="hint_pressed_alpha_material_light">0.54</item>
-    <item type="dimen" name="horizontal_margin">15sdp</item>
+    <item type="dimen" name="horizontal_margin">15sp</item>
     <item type="dimen" name="item_margin">@dimen/_10sdp</item>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20.0dip</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800.0dip</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120.0dip</dimen>
-    <item type="dimen" name="membership">40sdp</item>
-    <item type="dimen" name="minus_horizontal_margin">15sdp</item>
-    <item type="dimen" name="minus_vertical_margin">10sdp</item>
-    <item type="dimen" name="mts">16sdp</item>
+    <item type="dimen" name="membership">40sp</item>
+    <item type="dimen" name="minus_horizontal_margin">15sp</item>
+    <item type="dimen" name="minus_vertical_margin">10sp</item>
+    <item type="dimen" name="mts">16sp</item>
     <dimen name="nav_header_height">160.0dip</dimen>
     <dimen name="nav_header_vertical_spacing">16.0dip</dimen>
     <dimen name="notification_action_icon_size">32.0dip</dimen>
@@ -157,10 +157,10 @@
     <dimen name="notification_top_pad">10.0dip</dimen>
     <dimen name="notification_top_pad_large_text">5.0dip</dimen>
     <dimen name="tabText">48.0sp</dimen>
-    <dimen name="_35sdp">35sdp</dimen>
-    <dimen name="_70sdp">70sdp</dimen>
-    <dimen name="_10sdp">10sdp</dimen>
-    <item type="dimen" name="staff">50sdp</item>
-    <item type="dimen" name="ts">12sdp</item>
-    <item type="dimen" name="vertical_margin">d10sdp</item>
+    <dimen name="_35sdp">35sp</dimen>
+    <dimen name="_70sdp">70sp</dimen>
+    <dimen name="_10sdp">10sp</dimen>
+    <item type="dimen" name="staff">50sp</item>
+    <item type="dimen" name="ts">12sp</item>
+    <item type="dimen" name="vertical_margin">10sp</item>
 </resources>

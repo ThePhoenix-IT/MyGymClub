@@ -3,6 +3,7 @@ package com.thephoenixit.mygymclub.views;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,12 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.thephoenixit.mygymclub.R;
 
+import net.cachapa.expandablelayout.ExpandableLayout;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+private ExpandableLayout expandable_layout1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +46,22 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        TextView user_name = findViewById(R.id.user_name);
+        TextView user_email = findViewById(R.id.user_email);
+        TextView item_class_schedule = findViewById(R.id.item_class_schedule);
+        user_name.setText("Hamza JGUERIM");
+        user_email.setText("hamzajg@gmail.com");
+        expandable_layout1 = findViewById(R.id.expandable_layout1);
+        item_class_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (expandable_layout1.isExpanded()) {
+                    expandable_layout1.collapse();
+                } else {
+                    expandable_layout1.expand();
+                }
+            }
+        });
     }
 
     @Override

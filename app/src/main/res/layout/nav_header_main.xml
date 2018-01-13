@@ -1,23 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:theme="@style/ThemeOverlay.AppCompat.Dark" android:gravity="top" android:orientation="vertical" android:id="@+id/blur" android:background="@color/colorDrawer" android:layout_width="fill_parent" android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:background="@color/colorMain" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="fill_parent" android:layout_height="?actionBarSize">
-        <TextView android:textSize="@dimen/TextLarge" android:textColor="@android:color/white" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/header_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/app_name" android:layout_weight="1.0" />
-        <Button android:layout_gravity="center_vertical" android:background="@drawable/ic_menu" android:layout_width="@dimen/_35sdp" android:layout_height="@dimen/_35sdp" android:foreground="?selectableItemBackgroundBorderless" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/blur"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorDrawer"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorMain"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.0"
+            android:gravity="center_vertical"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/TextLarge" />
+
+        <Button
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_menu"
+            android:foreground="?selectableItemBackgroundBorderless" />
     </LinearLayout>
 
-    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="horizontal" android:id="@+id/navigation_profile" android:background="@drawable/ripple" android:paddingTop="@dimen/horizontal_margin" android:paddingBottom="@dimen/horizontal_margin" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/img_user" android:layout_width="@dimen/_70sdp" android:layout_height="@dimen/_70sdp" android:layout_marginRight="@dimen/_10sdp" android:src="@drawable/user_sample" />
-            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                <TextView android:textSize="@dimen/TextMedium" android:id="@+id/user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                <TextView android:textSize="@dimen/TextMedium" android:id="@+id/user_addr" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:id="@+id/navigation_profile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/horizontal_margin"
+            android:paddingTop="@dimen/horizontal_margin">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_user"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:src="@drawable/user_sample" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/TextMedium" />
+
+                <TextView
+                    android:id="@+id/user_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/TextMedium" />
             </LinearLayout>
         </LinearLayout>
-        <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
-                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <TextView android:id="@+id/item_dashboard" android:text="Dashboard" android:drawableLeft="@drawable/ic_dashboard" style="@style/NavigationTextView" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/item_dashboard"
+                        style="@style/NavigationTextView"
+                        android:drawableLeft="@drawable/ic_dashboard"
+                        android:text="Dashboard" />
+
+                    <TextView
+                        android:id="@+id/item_activity"
+                        style="@style/NavigationTextView"
+                        android:drawableLeft="@drawable/ic_activity"
+                        android:text="Activity" />
+
+                    <TextView
+                        android:id="@+id/item_class_schedule"
+                        style="@style/NavigationTextView"
+                        android:drawableLeft="@drawable/ic_class_schedule"
+                        android:drawableRight="@drawable/ic_expand_more"
+                        android:text="@string/class_schedule"/>
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandable_layout1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5">
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/vertical_margin"
+                            android:layout_marginLeft="@dimen/horizontal_margin"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/vertical_margin">
+
+                            <TextView
+                                android:id="@+id/classList"
+                                style="@style/nav_link"
+                                android:text="@string/class_list" />
+
+                            <TextView
+                                android:id="@+id/classSchedule"
+                                style="@style/nav_link"
+                                android:text="@string/class_schedule" />
+                        </LinearLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                    <TextView
+                        android:id="@+id/item_assign_workouts"
+                        style="@style/NavigationTextView"
+                        android:drawableLeft="@drawable/ic_assign_workout"
+                        android:text="@string/assign_workouts" />
+
+                    <TextView
+                        android:id="@+id/item_workouts"
+                        style="@style/NavigationTextView"
+                        android:drawableLeft="@drawable/ic_workout"
+                        android:text="@string/workouts" />
+
 
                 </LinearLayout>
             </RelativeLayout>
