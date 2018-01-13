@@ -5,5 +5,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background"
+    android:fitsSystemWindows="true"
     tools:context="com.thephoenixit.mygymclub.views.RegisterActivity">
 </ScrollView>
