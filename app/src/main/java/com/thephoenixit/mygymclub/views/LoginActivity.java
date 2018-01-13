@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 attemptLogin();
             }
         });
-        Button btnRegister = (Button) findViewById(R.id.btn_register);
+        TextView btnRegister = (TextView) findViewById(R.id.btn_register);
         btnRegister.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
