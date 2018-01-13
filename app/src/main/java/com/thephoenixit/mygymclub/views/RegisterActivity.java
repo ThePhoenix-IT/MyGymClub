@@ -1,4 +1,4 @@
-package com.thephoenixit.mygymclub.Views;
+package com.thephoenixit.mygymclub.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

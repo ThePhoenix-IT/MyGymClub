@@ -1,4 +1,4 @@
-package com.thephoenixit.mygymclub.Views;
+package com.thephoenixit.mygymclub.views;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
