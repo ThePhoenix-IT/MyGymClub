@@ -1,11 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.thephoenixit.mygymclub.views.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    android:id="@+id/content_home"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refresh"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/colorMain">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_2sdp"
+                    android:weightSum="3.0">
+
+                    <RelativeLayout
+                        android:id="@+id/divWorkout"
+                        style="@style/dashboard_div"
+                        android:background="#ff5fce9b">
+
+                        <ImageView
+                            android:id="@+id/img1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="@dimen/_1sdp"
+                            android:src="@drawable/ic_dash_member" />
+
+                        <TextView
+                            android:id="@+id/lbl1"
+                            style="@style/dashboard_text"
+                            android:layout_below="@id/img1"
+                            android:text="@string/workouts" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/divClass"
+                        style="@style/dashboard_div"
+                        android:layout_marginLeft="@dimen/_2sdp"
+                        android:background="#ff66b5d6">
+
+                        <ImageView
+                            android:id="@+id/img2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="@dimen/_1sdp"
+                            android:src="@drawable/ic_dash_staff_member" />
+
+                        <TextView
+                            android:id="@+id/lbMember"
+                            style="@style/dashboard_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img2"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/class_schedule" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/divNutrition"
+                        style="@style/dashboard_div"
+                        android:layout_marginLeft="@dimen/_2sdp"
+                        android:background="#ffe87352">
+
+                        <ImageView
+                            android:id="@+id/img3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:src="@drawable/ic_restaurant_menu_white" />
+
+                        <TextView
+                            android:id="@+id/lbl3"
+                            style="@style/dashboard_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img3"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/nutrition_plan" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/calender"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/vertical_margin"
+                    app:mcv_arrowColor="@color/ColorWhite"
+                    app:mcv_dateTextAppearance="@style/MyCustomDateText"
+                    app:mcv_headerTextAppearance="@style/MyCustomTextAppearance"
+                    app:mcv_selectionColor="@color/ColorSelection"
+                    app:mcv_weekDayTextAppearance="@style/MyCustomTextAppearance" />
+
+                <TextView
+                    android:id="@+id/tv_weight"
+                    style="@style/chart_link"
+                    android:text="@string/weight_progress_report" />
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandable_layout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineWeight"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/_300sdp"
+                        android:layout_marginBottom="@dimen/vertical_margin" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

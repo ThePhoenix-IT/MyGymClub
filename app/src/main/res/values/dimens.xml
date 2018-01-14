@@ -5,12 +5,12 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16.0dip</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20.0dip</dimen>
     <dimen name="abc_config_prefDialogWidth">320.0dip</dimen>
-    <item type="dimen" name="abc_dialog_fixed_height_major">79.99999%</item>
-    <item type="dimen" name="abc_dialog_fixed_height_minor">100.0%</item>
+    <item name="abc_dialog_fixed_height_major" type="dimen">79.99999%</item>
+    <item name="abc_dialog_fixed_height_minor" type="dimen">100.0%</item>
     <dimen name="abc_dialog_fixed_width_major">320.0dip</dimen>
     <dimen name="abc_dialog_fixed_width_minor">320.0dip</dimen>
-    <item type="dimen" name="abc_dialog_min_width_major">65.0%</item>
-    <item type="dimen" name="abc_dialog_min_width_minor">94.99999%</item>
+    <item name="abc_dialog_min_width_major" type="dimen">65.0%</item>
+    <item name="abc_dialog_min_width_minor" type="dimen">94.99999%</item>
     <dimen name="abc_action_bar_content_inset_material">16.0dip</dimen>
     <dimen name="abc_action_bar_content_inset_with_nav">72.0dip</dimen>
     <dimen name="abc_action_bar_default_padding_end_material">0.0dip</dimen>
@@ -27,15 +27,17 @@
     <dimen name="abc_switch_padding">3.0dip</dimen>
     <dimen name="notification_content_margin_start">8.0dip</dimen>
     <dimen name="notification_main_column_padding_top">10.0dip</dimen>
-    <item type="dimen" name="notification_media_narrow_margin">@dimen/notification_content_margin_start</item>
+    <item name="notification_media_narrow_margin" type="dimen">
+        @dimen/notification_content_margin_start
+    </item>
     <dimen name="activity_horizontal_margin">16.0dip</dimen>
-    <item type="dimen" name="TextLarge">17sp</item>
-    <item type="dimen" name="TextMedium">14sp</item>
-    <item type="dimen" name="TextSmall">12sp</item>
-    <item type="dimen" name="TextXLarge">20sp</item>
-    <item type="dimen" name="TextXMedium">15sp</item>
-    <item type="dimen" name="TextXSmall">8sp</item>
-    <item type="dimen" name="TextXXSmall">10sp</item>
+    <item name="TextLarge" type="dimen">17sp</item>
+    <item name="TextMedium" type="dimen">14sp</item>
+    <item name="TextSmall" type="dimen">12sp</item>
+    <item name="TextXLarge" type="dimen">20sp</item>
+    <item name="TextXMedium" type="dimen">15sp</item>
+    <item name="TextXSmall" type="dimen">8sp</item>
+    <item name="TextXXSmall" type="dimen">10sp</item>
     <dimen name="abc_action_bar_elevation_material">4.0dip</dimen>
     <dimen name="abc_action_bar_icon_vertical_padding_material">16.0dip</dimen>
     <dimen name="abc_action_bar_overflow_padding_end_material">10.0dip</dimen>
@@ -47,10 +49,14 @@
     <dimen name="abc_action_button_min_height_material">48.0dip</dimen>
     <dimen name="abc_action_button_min_width_material">48.0dip</dimen>
     <dimen name="abc_action_button_min_width_overflow_material">36.0dip</dimen>
-    <item type="dimen" name="abc_button_inset_horizontal_material">@dimen/abc_control_inset_material</item>
+    <item name="abc_button_inset_horizontal_material" type="dimen">
+        @dimen/abc_control_inset_material
+    </item>
     <dimen name="abc_button_inset_vertical_material">6.0dip</dimen>
     <dimen name="abc_button_padding_horizontal_material">8.0dip</dimen>
-    <item type="dimen" name="abc_button_padding_vertical_material">@dimen/abc_control_padding_material</item>
+    <item name="abc_button_padding_vertical_material" type="dimen">
+        @dimen/abc_control_padding_material
+    </item>
     <dimen name="abc_cascading_menus_min_smallest_width">720.0dip</dimen>
     <dimen name="abc_control_corner_material">2.0dip</dimen>
     <dimen name="abc_control_inset_material">4.0dip</dimen>
@@ -60,8 +66,8 @@
     <dimen name="abc_dialog_padding_material">24.0dip</dimen>
     <dimen name="abc_dialog_padding_top_material">18.0dip</dimen>
     <dimen name="abc_dialog_title_divider_material">8.0dip</dimen>
-    <item type="dimen" name="abc_disabled_alpha_material_dark">0.3</item>
-    <item type="dimen" name="abc_disabled_alpha_material_light">0.26</item>
+    <item name="abc_disabled_alpha_material_dark" type="dimen">0.3</item>
+    <item name="abc_disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="abc_dropdownitem_icon_width">32.0dip</dimen>
     <dimen name="abc_dropdownitem_text_padding_left">8.0dip</dimen>
     <dimen name="abc_dropdownitem_text_padding_right">8.0dip</dimen>
@@ -69,7 +75,9 @@
     <dimen name="abc_edit_text_inset_horizontal_material">4.0dip</dimen>
     <dimen name="abc_edit_text_inset_top_material">10.0dip</dimen>
     <dimen name="abc_floating_window_z">16.0dip</dimen>
-    <item type="dimen" name="abc_list_item_padding_horizontal_material">@dimen/abc_action_bar_content_inset_material</item>
+    <item name="abc_list_item_padding_horizontal_material" type="dimen">
+        @dimen/abc_action_bar_content_inset_material
+    </item>
     <dimen name="abc_panel_menu_list_width">296.0dip</dimen>
     <dimen name="abc_progress_bar_height_material">4.0dip</dimen>
     <dimen name="abc_search_view_preferred_height">48.0dip</dimen>
@@ -124,25 +132,25 @@
     <dimen name="design_tab_max_width">264.0dip</dimen>
     <dimen name="design_tab_text_size">14.0sp</dimen>
     <dimen name="design_tab_text_size_2line">12.0sp</dimen>
-    <item type="dimen" name="disabled_alpha_material_dark">0.3</item>
-    <item type="dimen" name="disabled_alpha_material_light">0.26</item>
+    <item name="disabled_alpha_material_dark" type="dimen">0.3</item>
+    <item name="disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="fab_margin">16.0dip</dimen>
-    <item type="dimen" name="highlight_alpha_material_colored">0.26</item>
-    <item type="dimen" name="highlight_alpha_material_dark">0.2</item>
-    <item type="dimen" name="highlight_alpha_material_light">0.12</item>
-    <item type="dimen" name="hint_alpha_material_dark">0.5</item>
-    <item type="dimen" name="hint_alpha_material_light">0.38</item>
-    <item type="dimen" name="hint_pressed_alpha_material_dark">0.7</item>
-    <item type="dimen" name="hint_pressed_alpha_material_light">0.54</item>
-    <item type="dimen" name="horizontal_margin">15sp</item>
-    <item type="dimen" name="item_margin">@dimen/_10sdp</item>
+    <item name="highlight_alpha_material_colored" type="dimen">0.26</item>
+    <item name="highlight_alpha_material_dark" type="dimen">0.2</item>
+    <item name="highlight_alpha_material_light" type="dimen">0.12</item>
+    <item name="hint_alpha_material_dark" type="dimen">0.5</item>
+    <item name="hint_alpha_material_light" type="dimen">0.38</item>
+    <item name="hint_pressed_alpha_material_dark" type="dimen">0.7</item>
+    <item name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
+    <item name="horizontal_margin" type="dimen">15sp</item>
+    <item name="item_margin" type="dimen">@dimen/_10sdp</item>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20.0dip</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800.0dip</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120.0dip</dimen>
-    <item type="dimen" name="membership">40sp</item>
-    <item type="dimen" name="minus_horizontal_margin">15sp</item>
-    <item type="dimen" name="minus_vertical_margin">10sp</item>
-    <item type="dimen" name="mts">16sp</item>
+    <item name="membership" type="dimen">40sp</item>
+    <item name="minus_horizontal_margin" type="dimen">15sp</item>
+    <item name="minus_vertical_margin" type="dimen">10sp</item>
+    <item name="mts" type="dimen">16sp</item>
     <dimen name="nav_header_height">160.0dip</dimen>
     <dimen name="nav_header_vertical_spacing">16.0dip</dimen>
     <dimen name="notification_action_icon_size">32.0dip</dimen>
@@ -160,7 +168,13 @@
     <dimen name="_35sdp">35sp</dimen>
     <dimen name="_70sdp">70sp</dimen>
     <dimen name="_10sdp">10sp</dimen>
-    <item type="dimen" name="staff">50sp</item>
-    <item type="dimen" name="ts">12sp</item>
-    <item type="dimen" name="vertical_margin">10sp</item>
+    <dimen name="_2sdp">2sp</dimen>
+    <dimen name="_1sdp">1sp</dimen>
+    <dimen name="_5sdp">5sp</dimen>
+    <dimen name="_4sdp">4sp</dimen>
+    <dimen name="_300sdp">300sp</dimen>
+
+    <item name="staff" type="dimen">50sp</item>
+    <item name="ts" type="dimen">12sp</item>
+    <item name="vertical_margin" type="dimen">10sp</item>
 </resources>

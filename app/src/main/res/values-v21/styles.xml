@@ -87,4 +87,49 @@
         <item name="android:foreground">@drawable/ripple</item>
         <item name="android:selectable">true</item>
     </style>
+
+    <style name="dashboard_div">
+        <item name="android:padding">@dimen/_2sdp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:selectable">true</item>
+    </style>
+
+    <style name="dashboard_text" parent="@style/fp_detail">
+        <item name="android:textSize">@dimen/TextMedium</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+    </style>
+
+    <style name="dashboard_title">
+        <item name="android:textSize">@dimen/TextMedium</item>
+        <item name="android:textColor">@color/ColorWhite</item>
+        <item name="android:background">@color/colorMainLight</item>
+        <item name="android:padding">@dimen/_2sdp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5.0dip</item>
+        <item name="android:drawableRight">@drawable/ic_expand_more</item>
+    </style>
+
+    <style name="fp_detail">
+        <item name="android:textSize">@dimen/TextLarge</item>
+        <item name="android:textColor">@color/ColorWhite</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="chart_link" parent="@style/tv_link">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/colorMainLight</item>
+        <item name="android:padding">@dimen/_5sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_1sdp</item>
+        <item name="android:drawableRight">@drawable/ic_expand_more</item>
+    </style>
 </resources>
