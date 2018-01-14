@@ -1,7 +1,6 @@
 package com.thephoenixit.mygymclub.views;
 
 import android.graphics.Color;
-import android.graphics.DashPathEffect;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -18,13 +17,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.LimitLine;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.thephoenixit.mygymclub.R;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
@@ -43,45 +38,41 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         lineWeightChart = findViewById(R.id.lineWeight);
-        lineWeightChart.setDrawGridBackground(false);
+
         // no description text
         lineWeightChart.getDescription().setEnabled(false);
-        lineWeightChart.animateX(2500);
 
-        LimitLine llXAxis = new LimitLine(10f, "Index 10");
-        llXAxis.setLineWidth(4f);
-        llXAxis.enableDashedLine(10f, 10f, 0f);
-        llXAxis.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
-        llXAxis.setTextSize(10f);
+        // mChart.setDrawHorizontalGrid(false);
+        //
+        // enable / disable grid background
+        lineWeightChart.setDrawGridBackground(false);
+//        chart.getRenderer().getGridPaint().setGridColor(Color.WHITE & 0x70FFFFFF);
 
-        XAxis xAxis = lineWeightChart.getXAxis();
-        xAxis.enableGridDashedLine(10f, 10f, 0f);
+        // enable touch gestures
+        lineWeightChart.setTouchEnabled(true);
 
-        LimitLine ll1 = new LimitLine(150f, "Upper Limit");
-        ll1.setLineWidth(4f);
-        ll1.enableDashedLine(10f, 10f, 0f);
-        ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_TOP);
-        ll1.setTextSize(10f);
+        // enable scaling and dragging
+        lineWeightChart.setDragEnabled(true);
+        lineWeightChart.setScaleEnabled(true);
 
-        LimitLine ll2 = new LimitLine(-30f, "Lower Limit");
-        ll2.setLineWidth(4f);
-        ll2.enableDashedLine(10f, 10f, 0f);
-        ll2.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
-        ll2.setTextSize(10f);
-        YAxis leftAxis = lineWeightChart.getAxisLeft();
-        leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
-        leftAxis.addLimitLine(ll1);
-        leftAxis.addLimitLine(ll2);
-        leftAxis.setAxisMaximum(200f);
-        leftAxis.setAxisMinimum(-50f);
-        //leftAxis.setYOffset(20f);
-        leftAxis.enableGridDashedLine(10f, 10f, 0f);
-        leftAxis.setDrawZeroLine(false);
+        // if disabled, scaling can be done on x- and y-axis separately
+        lineWeightChart.setPinchZoom(false);
 
-        // limit lines are drawn behind data (and not on top)
-        leftAxis.setDrawLimitLinesBehindData(true);
+        lineWeightChart.setBackgroundColor(Color.rgb(137, 230, 81));
 
+        // set custom chart offsets (automatic offset calculation is hereby disabled)
+        lineWeightChart.setViewPortOffsets(10, 0, 10, 0);
+
+
+        lineWeightChart.getAxisLeft().setEnabled(false);
+        lineWeightChart.getAxisLeft().setSpaceTop(40);
+        lineWeightChart.getAxisLeft().setSpaceBottom(40);
         lineWeightChart.getAxisRight().setEnabled(false);
+
+        lineWeightChart.getXAxis().setEnabled(false);
+
+        // animate calls invalidate()...
+        lineWeightChart.animateX(2500);
         // add data
         setChartData(45, 100);
         Button btn_menu = findViewById(R.id.btn_menu);
@@ -139,48 +130,28 @@ public class MainActivity extends AppCompatActivity
         ArrayList<Entry> values = new ArrayList<Entry>();
 
         for (int i = 0; i < count; i++) {
-
             float val = (float) (Math.random() * range) + 3;
             values.add(new Entry(i, val));
         }
 
-        LineDataSet set1;
+        // create a dataset and give it a type
+        LineDataSet set1 = new LineDataSet(values, "DataSet 1");
+        // set1.setFillAlpha(110);
+        // set1.setFillColor(Color.RED);
 
-        if (lineWeightChart.getData() != null &&
-                lineWeightChart.getData().getDataSetCount() > 0) {
-            set1 = (LineDataSet) lineWeightChart.getData().getDataSetByIndex(0);
-            set1.setValues(values);
-            lineWeightChart.getData().notifyDataChanged();
-            lineWeightChart.notifyDataSetChanged();
-        } else {
-            // create a dataset and give it a type
-            set1 = new LineDataSet(values, "DataSet 1");
+        set1.setLineWidth(1.75f);
+        set1.setCircleRadius(5f);
+        set1.setCircleHoleRadius(2.5f);
+        set1.setColor(Color.WHITE);
+        set1.setCircleColor(Color.WHITE);
+        set1.setHighLightColor(Color.WHITE);
+        set1.setDrawValues(false);
 
-            set1.setDrawIcons(false);
+        // create a data object with the datasets
+        LineData data = new LineData(set1);
 
-            // set the line to be drawn like this "- - - - - -"
-            set1.enableDashedLine(10f, 5f, 0f);
-            set1.enableDashedHighlightLine(10f, 5f, 0f);
-            set1.setColor(Color.BLACK);
-            set1.setCircleColor(Color.BLACK);
-            set1.setLineWidth(1f);
-            set1.setCircleRadius(3f);
-            set1.setDrawCircleHole(false);
-            set1.setValueTextSize(9f);
-            set1.setDrawFilled(true);
-            set1.setFormLineWidth(1f);
-            set1.setFormLineDashEffect(new DashPathEffect(new float[]{10f, 5f}, 0f));
-            set1.setFormSize(15.f);
-            set1.setFillColor(Color.WHITE);
-            ArrayList<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
-            dataSets.add(set1); // add the datasets
-
-            // create a data object with the datasets
-            LineData data = new LineData(dataSets);
-
-            // set data
-            lineWeightChart.setData(data);
-        }
+        // set data
+        lineWeightChart.setData(data);
     }
 
     @Override
