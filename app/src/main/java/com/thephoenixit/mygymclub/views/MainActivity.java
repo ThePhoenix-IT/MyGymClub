@@ -20,11 +20,15 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.thephoenixit.mygymclub.Beans.ChestItem;
 import com.thephoenixit.mygymclub.R;
+import com.thephoenixit.mygymclub.Utils.SetChart;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,43 +42,13 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         lineWeightChart = findViewById(R.id.lineWeight);
-
-        // no description text
-        lineWeightChart.getDescription().setEnabled(false);
-
-        // mChart.setDrawHorizontalGrid(false);
-        //
-        // enable / disable grid background
-        lineWeightChart.setDrawGridBackground(false);
-//        chart.getRenderer().getGridPaint().setGridColor(Color.WHITE & 0x70FFFFFF);
-
-        // enable touch gestures
-        lineWeightChart.setTouchEnabled(true);
-
-        // enable scaling and dragging
-        lineWeightChart.setDragEnabled(true);
-        lineWeightChart.setScaleEnabled(true);
-
-        // if disabled, scaling can be done on x- and y-axis separately
-        lineWeightChart.setPinchZoom(false);
-
-        lineWeightChart.setBackgroundColor(Color.rgb(137, 230, 81));
-
-        // set custom chart offsets (automatic offset calculation is hereby disabled)
-        lineWeightChart.setViewPortOffsets(10, 0, 10, 0);
-
-
-        lineWeightChart.getAxisLeft().setEnabled(false);
-        lineWeightChart.getAxisLeft().setSpaceTop(40);
-        lineWeightChart.getAxisLeft().setSpaceBottom(40);
-        lineWeightChart.getAxisRight().setEnabled(false);
-
-        lineWeightChart.getXAxis().setEnabled(false);
-
-        // animate calls invalidate()...
-        lineWeightChart.animateX(2500);
-        // add data
-        setChartData(45, 100);
+        List<ChestItem> measure = new ArrayList();
+        measure.add(new ChestItem("10", new Date().toString()));
+        measure.add(new ChestItem("100", new Date().toString()));
+        measure.add(new ChestItem("170", new Date().toString()));
+        measure.add(new ChestItem("102", new Date().toString()));
+        measure.add(new ChestItem("210", new Date().toString()));
+        chartData(measure, lineWeightChart);
         Button btn_menu = findViewById(R.id.btn_menu);
         btn_menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +98,23 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+    }
+
+    private void chartData(List list, LineChart linechart) {
+        linechart.clear();
+        if (list.size() > 0) {
+            ArrayList arraylist = new ArrayList();
+            for (int i = 0; i < list.size(); i++)
+                arraylist.add(((ChestItem) list.get(i)).getResultDate());
+
+            ArrayList arraylist1 = new ArrayList();
+            for (int j = 0; j < list.size(); j++) {
+                float f = Float.parseFloat(((ChestItem) list.get(j)).getResult());
+                arraylist1.add(new Entry(j, f));
+            }
+
+            new SetChart(linechart, this, arraylist, arraylist1);
+        }
     }
 
     private void setChartData(int count, float range) {
