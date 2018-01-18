@@ -11,9 +11,9 @@ import io.realm.annotations.PrimaryKey;
 
 public class Account extends RealmObject {
     @PrimaryKey
-    private Long account_id;
+    private long account_id;
     private String account_login;
     private String account_password;
-    private Boolean account_status;
+    private boolean account_status;
     private Date creation_date;
 }

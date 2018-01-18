@@ -11,8 +11,9 @@ import io.realm.annotations.PrimaryKey;
 
 public class Plan extends RealmObject {
     @PrimaryKey
-    private Long plan_id;
+    private long plan_id;
     private Date plan_start_date;
     private Date plan_end_date;
     private User user;
+    private PlanType plan_type;
 }

@@ -9,7 +9,7 @@ import io.realm.annotations.PrimaryKey;
 
 public class PlanStatus extends RealmObject {
     @PrimaryKey
-    private Long plan_status_id;
+    private long plan_status_id;
     private String plan_statusçdesc;
     private Plan plan;
 }

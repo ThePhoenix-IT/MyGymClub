@@ -11,11 +11,11 @@ import io.realm.annotations.PrimaryKey;
 
 public class User extends RealmObject {
     @PrimaryKey
-    private Long user_id;
+    private long user_id;
     private String user_full_name;
     private String user_email;
     private Date user_birth_date;
-    private Boolean user_gender;
+    private boolean user_gender;
     private Date creation_date;
     private Account user_account;
 }

@@ -9,11 +9,11 @@ import io.realm.annotations.PrimaryKey;
  * Created by root on 18/01/14.
  */
 
-public class Measure extends RealmObject {
+public class Measurement extends RealmObject {
     @PrimaryKey
-    private Long measure_id;
-    private Float height;
-    private Float weight;
+    private long measurement_id;
+    private float height;
+    private float weight;
     private Date creation_date;
     private User user;
 }
